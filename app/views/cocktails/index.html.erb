@@ -1,6 +1,29 @@
-<ul>
-  <p>Cocktails</p>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
-  <% end %>
-</ul>
+<div id = "banner">
+<h1 style="color:black;">Cocktail Bible </h1>
+<p>Quench your thirst..</p>
+  </div>
+
+<table class="table-primary">
+  <thead>
+    <tr class="table-secondary">
+      <th>Name</th>
+      <br>
+      <th>Banner url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= cocktail.name %></td>
+        <td><%= link_to 'Show', cocktail %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<p>
+<button type="button" class="btn btn-light"><%=  link_to '** New Cocktail **', new_cocktail_path %></button>
+</p>
